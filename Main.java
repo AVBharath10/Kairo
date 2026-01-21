@@ -4,7 +4,6 @@ import java.util.List;
 
 //Event class
 class Event {
-
     private final String eventType;
     private final String payLoad;
     private final long ts;
@@ -56,7 +55,7 @@ public class Topic {
     }
 
     private int choosePartition(String key) {
-        return Math.abs(key.hashCode() % partitions.size());
+        return Math.abs(key.hashCode()) % partitions.size();
     }
 
     public long append(String key, Event event) {
